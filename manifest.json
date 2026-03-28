@@ -1,0 +1,19 @@
+{
+  "name": "Catatan Pengeluaranku",
+  "short_name": "Pengeluaran",
+  "description": "Catatan keuangan pribadi dengan sinkronisasi cloud",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0B0B0F",
+  "theme_color": "#7C6FFF",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "productivity"]
+}

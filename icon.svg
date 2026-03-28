@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="none">
+  <defs>
+    <linearGradient id="walletGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C6FFF" />
+      <stop offset="100%" stop-color="#9B8FFF" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes floatCoin {
+        0% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+        50% { transform: translateY(-6px) rotate(8deg); opacity: 0.9; }
+        100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+      }
+      @keyframes pulseBg {
+        0% { r: 8; opacity: 0.3; }
+        100% { r: 14; opacity: 0; }
+      }
+      .coin {
+        animation: floatCoin 1.2s ease-in-out infinite;
+        transform-origin: center;
+      }
+      .pulse-ring {
+        animation: pulseBg 1.5s infinite;
+        transform-origin: center;
+      }
+    </style>
+  </defs>
+
+  <!-- Background glow ring (pulsing) -->
+  <circle cx="50" cy="50" r="28" fill="url(#walletGrad)" opacity="0.15" class="pulse-ring" />
+
+  <!-- Wallet body -->
+  <rect x="20" y="32" width="60" height="40" rx="8" fill="url(#walletGrad)" stroke="#FFFFFF" stroke-width="1.2" filter="url(#glow)" />
+  <!-- Wallet flap -->
+  <path d="M20 40 L32 32 L68 32 L80 40 Z" fill="url(#walletGrad)" stroke="#FFFFFF" stroke-width="1" />
+  <!-- Wallet accent line -->
+  <rect x="60" y="48" width="16" height="8" rx="4" fill="#FFFFFF" opacity="0.8" />
+
+  <!-- Animated coin -->
+  <g class="coin">
+    <circle cx="45" cy="55" r="9" fill="#FFD966" stroke="#FFB830" stroke-width="1" />
+    <text x="45" y="59" text-anchor="middle" font-size="10" font-weight="bold" fill="#7C4D1A">💰</text>
+  </g>
+</svg>
